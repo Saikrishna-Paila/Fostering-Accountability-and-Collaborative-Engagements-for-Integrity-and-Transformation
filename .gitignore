@@ -159,3 +159,17 @@ _build/
 
 # setuptools-scm/
 src/*/_version.py
+
+# Project specific
+data/
+secrets/
+.env
+*.log
+
+# Documentation
+_build/
+.jupyter_cache/
+
+# OS specific
+.DS_Store
+Thumbs.db

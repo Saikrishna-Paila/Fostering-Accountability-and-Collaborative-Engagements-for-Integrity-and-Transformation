@@ -1,11 +1,32 @@
 cff-version: 1.2.0
-message: "Country borders or names do not necessarily reflect the World Bank Group’s official position. All maps are for illustrative purposes and do not imply the expression of any opinion on the part of the World Bank, concerning the legal status of any country or territory or concerning the delimitation of frontiers or boundaries."
-title: "World Bank Data Lab Project Template"
+message: "If you use this software, please cite it using the metadata below"
+type: software
+title: "JurisAI: Legal Assistant for Ghana and Sierra Leone"
+abstract: "An intelligent legal assistant providing multilingual legal guidance for Ghana and Sierra Leone."
 authors:
-  - affiliation: World Bank
-    family-names: Stefanini Vicente
-    given-names: Gabriel
-    orcid: https://orcid.org/0000-0001-6530-3780
+  - family-names: "Paila"
+    given-names: "Saikrishna"
+    affiliation: "World Bank Project"
+version: "1.0.0"
+date-released: "2024-04-01"
 keywords:
-  - Open Science
-repository-code: https://github.com/worldbank/template/tree/main
+  - "legal assistant"
+  - "artificial intelligence"
+  - "ghana"
+  - "sierra leone"
+  - "multilingual"
+  - "legal guidance"
+repository-code: "https://github.com/worldbank/jurisai"
+repository-artifact: "https://jurisai.streamlit.app"
+url: "https://worldbank.github.io/jurisai"
+license: "Mozilla Public License 2.0"
+references:
+  - type: article
+    authors:
+      - family-names: "World Bank"
+    title: "Access to Justice"
+    url: "https://www.worldbank.org/en/topic/governance/brief/access-to-justice"
+    year: 2024
+contact:
+  - email: "spaila@worldbank.org"
+    name: "Saikrishna Paila" 

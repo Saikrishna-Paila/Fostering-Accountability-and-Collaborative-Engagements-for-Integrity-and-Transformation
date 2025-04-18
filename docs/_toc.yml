@@ -2,29 +2,23 @@ format: jb-book
 root: README
 
 parts:
-  - caption: Examples
-    numbered: True
+  - caption: User Guide
     chapters:
-      - file: notebooks/world-bank-api.ipynb
-      - file: notebooks/world-bank-package.ipynb
-      - file: notebooks/nasa-apod.ipynb
-      - file: notebooks/bibliography.ipynb
-  - caption: Recommended Workflows
+      - file: installation.md
+      - file: api-credentials.md
+      - file: usage.md
+      
+  - caption: API Documentation
     chapters:
-      - file: docs/folders-and-naming
-      - file: docs/git-workflows
-      - file: docs/notebooks-workflows
-      - file: docs/presenting-results
-  - caption: Gallery
+      - file: ../notebooks/api-examples.ipynb
+      - file: ../notebooks/translation-examples.ipynb
+      
+  - caption: Development
     chapters:
-      - file: docs/gallery
-  - caption: Additional Resources
+      - file: contributing.md
+      - file: code-of-conduct.md
+      - file: citation.md
+
+  - caption: References
     chapters:
-      - url: https://datapartnership.org
-        title: Development Data Partnership
-      - url: https://wbdatalab.org
-        title: World Bank Data Lab
-      - url: https://www.worldbank.org/en/about/unit/unit-dec
-        title: World Bank DEC
-      - url: https://www.worldbank.org/en/research/dime
-        title: World Bank DIME
+      - file: bibliography.bib
