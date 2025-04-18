@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "JurisAI: Legal Assistant for Ghana and Sierra Leone"
+abstract: "An intelligent legal assistant providing multilingual legal guidance for Ghana and Sierra Leone, featuring AI-powered document analysis and translations in English, Akan, and Krio."
+type: software
+authors:
+  - name: "JurisAI Team"
+    affiliation: "George Washington University"
+version: "0.1.0"
+date-released: "2024-03-01"
+repository-code: "https://github.com/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation"
+keywords:
+  - legal-assistant
+  - ghana
+  - sierra-leone
+  - multilingual
+  - ai
+  - nlp
+license: Mozilla Public License 2.0
+references:
+  - authors:
+      - name: "Ghana Legal Information Institute"
+    title: "Ghana Legal Information Database"
+    type: database
+    url: "https://www.ghalii.org/"
+    year: 2024
+  - authors:
+      - name: "Sierra Leone Legal Information Institute"
+    title: "Sierra Leone Legal Information Database"
+    type: database
+    url: "https://www.sierralii.org/"
+    year: 2024
+contact:
+  - email: "spaila@worldbank.org"
+    name: "Saikrishna Paila" 

@@ -1,0 +1,24 @@
+format: jb-book
+root: README
+
+parts:
+  - caption: User Guide
+    chapters:
+      - file: installation.md
+      - file: api-credentials.md
+      - file: usage.md
+      
+  - caption: API Documentation
+    chapters:
+      - file: ../notebooks/api-examples.ipynb
+      - file: ../notebooks/translation-examples.ipynb
+      
+  - caption: Development
+    chapters:
+      - file: contributing.md
+      - file: code-of-conduct.md
+      - file: citation.md
+
+  - caption: References
+    chapters:
+      - file: bibliography.bib
