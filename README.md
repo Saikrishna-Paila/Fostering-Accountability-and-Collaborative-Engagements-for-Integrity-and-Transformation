@@ -1,382 +1,244 @@
-# Project Template
-
-[![CalVer](https://img.shields.io/badge/calver-YY.0M.MICRO-22bfda.svg)](https://calver.org)
-[![GitHub Release](https://img.shields.io/github/v/release/worldbank/template)](https://github.com/worldbank/template/releases)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/worldbank/template/main.svg)](https://results.pre-commit.ci/latest/github/worldbank/template/main)
-
-The <span style="color:#3EACAD">template</span> is a standardized, but flexible *project* and *documentation* structure of folders and files for sharing your data science work.
-
-Inspired by [literate programming](http://literateprogramming.com), maintained by the [Development Data Group](https://www.worldbank.org/en/about/unit/unit-dec/dev) and built as [GitHub template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), the <span style="color:#3EACAD">template</span> contains:
-
-- [**README**](README), [**CODE_OF_CONDUCT**](docs/CODE_OF_CONDUCT.md), [**CONTRIBUTING**](docs/CONTRIBUTING.md) templates
-    > README files are important and often neglected. The files should inform anyone about the first steps to use, learn and contribute to your project.
-
-- [**CITATION.cff**](CITATION.cff)
-  > Embracing [CFF](https://citation-file-format.github.io) aligns with best practices for reproducible research and software development. By adhering to established standards for documenting project dependencies and citations, we demonstrate our commitment to quality, transparency, and integrity in our work.
-
-- [**LICENSE**](LICENSE)
-  > The LICENSE is a document that  determines what others can and cannot do with contents of the repository. If no license is present, no one has permission to use and/or modify your code. The <span style="color:#3EACAD">template</span> is licensed under the [**Mozilla Public License**](https://www.mozilla.org/en-US/MPL/). And so will projects generated from it. For further information, see also [this discussion](https://github.com/orgs/worldbank/discussions/4).
-
-- **docs/**
-
-    > Documentation is often never prioritized until last minute. The <span style="color:#3EACAD">template</span> aims to revert the malpractice by setting up the documentation as an integral part, inspired by [literate programming](http://literateprogramming.com). With the power of [Jupyter Book](https://jupyterbook.org), data practitioners have a way to share [Jupyter notebooks](https://jupyter.org) on [GitHub Pages](https://pages.github.com) in a standardized and effortless way.
-
-- [**docs/bibliography.bib**](/docs/bibliography.bib)
-    > A `bibliography` using the [BibTeX](https://www.bibtex.org/Format/) format. Use this file to include and cite your project's bibliography. See also [Citations and bibliographies](https://jupyterbook.org/en/stable/content/citations.html).
-
-- **data/**
-    > Placeholder folder for data. Data is immutable. By default, the data folder is present but ignored from version control, in order to prevent files of being mistakenly versioned in the code repository.
-
-- **src/**
-    > Placeholder folder for source code. If Python, it is recommended the package is made pip-installable.
-
-- **notebooks/**
-    > Placeholder folder for [Jupyter notebooks](https://jupyter.org). Markdown files and Jupyter notebooks can be added to `docs/_toc.yml` (Table of Contents) to compose the *documentation*.
-
-- [**.pre-commit-config.yml**](https://github.com/worldbank/template/blob/main/.pre-commit-config.yaml)
-    > Using [pre-commit](https://pre-commit.com) offers a significant advantage in streamlining the development process by enforcing code standards and reducing errors before code reaches the review stage or is committed to the repository. It automates the execution of various checks, such as syntax errors, code formatting, and ensuring compliance with coding standards, which saves time and improves code quality.
-
-- [GitHub Actions](https://github.com/features/actions) and [Dependabot](https://docs.github.com/en/code-security/dependabot)
-    > [GitHub Actions](https://github.com/features/actions) and [Dependabot](https://docs.github.com/en/code-security/dependabot) are two powerful features provided by [GitHub](https://github.com) to automate and secure software development workflows, making it easier for developers to maintain high-quality and safe codebases.
-
-- [GitHub Issues and Pull Requests GitHub](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)
-    > GitHub allows to customize how issues and pull requests are presented to the public. Custom templates encourage collaboration and maintainability.
-
-## Benefits
-
-Project templates on GitHub are essential for streamlining the data science and collaboration processes, and they offer several key benefits:
-
-- 🛠️ **Consistency and Best Practices:** Project templates encourage consistency in project structure, coding standards, and best practices. They provide a standardized starting point, ensuring that all team members follow the same guidelines and reduce the risk of introducing errors.
-
-- ⏳ **Time and Effort Savings:** Templates save time by eliminating the need to set up a project from scratch. Developers can quickly start working on their projects without the overhead of configuring the initial project structure, dependencies, or workflows.
-
-- 🚀 **Faster Onboarding:** New team members or contributors can easily get up to speed by using project templates. It simplifies the onboarding process, allowing them to understand the project structure and development practices more quickly.
-
-- 🎨 **Customization and Adaptability:** GitHub project templates can be customized to suit the specific needs of different types of projects or organizations. They serve as a foundation that can be adapted to meet unique requirements.
-
-- 🤝 **Community Engagement:** Open-source projects can attract more contributors when they provide accessible project templates. These templates facilitate contributions by reducing the barriers to entry for potential collaborators.
-
-- 🔄 **Version Control Integration:**  GitHub project templates are tightly integrated with Git version control. This makes it easier to manage changes, collaborate, and track the history of project configurations.
-
-- 📖 **Documentation and Guidance:** Templates often include documentation and guidance to help developers understand the project's structure and how to get started. This can include README files, code comments, and links to relevant resources.
-
-- 🔍 **Discoverability:** Templates are discoverable on GitHub, making it easy for developers to find and use project templates for their preferred programming languages, frameworks, and tools. This helps build a supportive ecosystem.
-
-- ✍️ **Continual Improvement:** Project templates can evolve and improve over time as best practices, technology, and requirements change. This ensures that projects remain up to date and maintainable.
-
-In summary, GitHub project templates are valuable resources that enhance project management, development practices, and collaboration. They promote consistency, efficiency, and quality in software development, whether for individual projects, open-source contributions, or within organizational contexts.
-
-```{important}
-*With flexibility comes great responsibility*. The <span style="color:#3EACAD">template</span> makes a few opiniated choices for the structure and code/documentation management of a project for what we envision to be most cases. However, even the best of the templates would never be perfect for the universe of cases out there. All in all, the <span style="color:#3EACAD">template</span> aims to encourage teams to start thinking and assimilate **collaborative coding**, **documentation**​, **enginerring**, **reproducibility​** and **best practices** as an integral part of the project. *In a standardized way*.
-
-In this spirit, if the <span style="color:#3EACAD">template</span> is not for you or in case you have feedback, please consider [opening an issue](https://github.com/worldbank/template/issues) or [submitting a pull request](https://github.com/worldbank/template/pulls) to share your ideas and suggestions. Your contributions would be appreciated immensely.
-```
-
-## Usage
-
-### Getting Started
-
-```{margin} ✨ Can't see the <span style="color:#3EACAD">template</span> ?
-Please ensure you are logged in on [GitHub](https://github.com) and have permissions to create a repository.
-```
-
-#### 1. **Create new repository from template**
-
-The <span style="color:#3EACAD">template</span> is a [GitHub template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template); in other words, you can generate a new GitHub repository with the same files and folders to use as the starting point for your project.
-
-> 🌟 [Create new repository from **template**](https://github.com/worldbank/template/generate)
-
-```{figure} docs/images/github-template.png
----
----
-```
-
-Now, give your repository a name, choose the **visibility** (Public or Private) and click **Create repository from template**.
-
-```{figure} docs/images/github-template-create.png
----
----
-```
-
-*Voilà!* The repository has been created with the same files and folders of the <span style="color:#3EACAD">template</span>.
-
-```{seealso}
-For additional information, see the [GitHub documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
-```
-
-#### 2. **Enable [GitHub Actions](https://github.com/features/actions) and [GitHub Pages](https://pages.github.com)**
-
-After creating the repository from the <span style="color:#3EACAD">template</span>, you will have to enable [GitHub Actions](https://github.com/features/actions) and [GitHub Pages](https://pages.github.com) to allow the [Jupyter Book](https://jupyterbook.org) to be built and published.
-
-To activate the workflow, please enable [GitHub Actions](https://github.com/features/actions) by going to the repository's settings (`Settings > Actions > General`), and selecting **read and write permissions** as shown below.
-
-```{figure} docs/images/github-template-action-enable.png
-    ---
-    ---
-```
-
-To publish, please enable [GitHub Pages](https://pages.github.com) by going to the repository's settings (`Settings > Pages`), and selecting to deploy from the **GitHub Actions** option.
-
-```{figure} docs/images/github-template-pages.png
----
----
-```
-
-On the next push to `main`, the [Jupyter Book](https://jupyterbook.org) will be automatically built and published. You can check the progress on the `Actions` tab.
-
-```{figure} docs/images/github-template-action.png
----
----
-```
-
-```{caution}
-The *documentation* can be published from either *public* and *private* repositories. If publishing private content, please remember to carefully select the content to be made public and to abide by your organization's Data Privacy Policy.
-```
-
-#### 3. **Update configurations**
-
-The <span style="color:#3EACAD">template</span> comes with a default `docs/_config.yml` Jupyter Book configuration file. Remember to update it to reflect your project's name and details.
-
-```yaml
-repository:
-url: https://github.com/worldbank/template
-branch: main
-```
-
-```{seealso}
-[Jupyter Book Configuration Reference](https://jupyterbook.org/en/stable/customize/config.html)
-```
-
-#### 4. **Review and update README files**
-
-The <span style="color:#3EACAD">template</span> comes with README files - including [this **README**](README) - that should provide anyone with the information about the first steps to use, learn and contribute to your project. Please **replace** and/or **repurpose** the files with instructions and detailed information about your project.
-
-> - **CODE_OF_CONDUCT**
-> - **CONTRIBUTING**
-> - **README**
-> - Issues and Pull Requests GitHub templates
-
-```{seealso}
-[Awesome README](https://github.com/matiassingers/awesome-readme)
-```
-
-#### 5. **Choose a license**
-
-The <span style="color:#3EACAD">template</span> is licensed under the [**Mozilla Public License**](https://www.mozilla.org/en-US/MPL). A LICENSE is the document that guarantees the repository can be shared, modified and receive contributions. Otherwise, if no license is present, all rights are reserved.
-
-<hr>
-
-**Congratulations!** You just created a beautiful home for your project. To access your project page, use (and share) the link as shown below.
-
-> 🌟 `https://<your-github-username>.github.io/<your-project-name>`
-
-````{note}
-For example, you can view [this live demo](http://worldbank.github.io/template) using the following link:
-
-> 🌟 [Live Demo - worldbank.github.io/template](http://worldbank.github.io/template)
-
-You can also install the latest version directly from the main branch:
-
+# JurisAI: Legal Assistant for Ghana and Sierra Leone 🇬🇭 🇸🇱
+
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-Mozilla-blue.svg)](LICENSE)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://jurisai.streamlit.app)
+[![OpenAI](https://img.shields.io/badge/OpenAI-API-green.svg)](https://openai.com/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Pinecone](https://img.shields.io/badge/Pinecone-Vector%20DB-blue)](https://www.pinecone.io/)
+[![LangChain](https://img.shields.io/badge/LangChain-0.3.20-orange)](https://python.langchain.com/)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation/graphs/commit-activity)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation)](https://github.com/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation/commits/main)
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Technical Architecture](#technical-architecture)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Dependencies](#dependencies)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+## Overview
+
+JurisAI is an intelligent legal assistant that provides accessible legal guidance for Ghana and Sierra Leone. Built with Streamlit and powered by advanced language models, it offers legal information in multiple languages to bridge the accessibility gap in legal services.
+
+### Quick Links
+- 🌐 [Live Demo](https://jurisai.streamlit.app)
+- 📚 [Documentation](docs/)
+- 🤝 [Contributing Guidelines](CONTRIBUTING.md)
+- 📜 [Code of Conduct](CODE_OF_CONDUCT.md)
+- ⚖️ [License](LICENSE)
+
+## Features
+
+### Multilingual Support
+- 🇬🇭 Ghana: English and Akan (Twi) translation
+- 🇸🇱 Sierra Leone: English and Krio translation
+- Real-time language switching
+- Culturally appropriate translations
+
+### AI-powered Legal Assistance
+- Interactive legal question answering
+- Context-aware responses using LangChain
+- Legal document analysis and summarization
+- Pinecone vector search for relevant legal documents
+
+### User Interface
+- Clean and intuitive Streamlit chat interface
+- Easy language toggle buttons
+- Mobile-responsive design
+- Real-time response generation
+
+## Technical Architecture
+
+### Backend Components
+- **LangChain Integration**:
+  - Document processing and chunking
+  - Vector embeddings management
+  - Prompt templates and chains
+  - Context-aware response generation
+
+- **Vector Search**:
+  - Pinecone for document similarity search
+  - Efficient retrieval of relevant legal information
+  - Semantic search capabilities
+
+- **Translation Services**:
+  - Google Cloud Translation API integration
+  - Deep-translator for backup translations
+  - Custom translation dictionaries for legal terms
+
+### Frontend Components
+- **Streamlit UI**:
+  - Chat-based interface
+  - Language selection toggles
+  - Progress indicators
+  - Response formatting
+  - Error handling
+
+## Installation
+
+### Prerequisites
+
+1. **Python Environment**:
+   - Python 3.9 or higher
+   - pip (Python package installer)
+
+2. **Required API Keys**:
+   - OpenAI API Key (for GPT models)
+   - Pinecone API Key (for vector search)
+   - Google Cloud Translation API Key
+   - Groq API Key (optional)
+
+### Setup Steps
+
+1. **Clone the Repository**:
 ```bash
-pip install git+https://github.com/worldbank/template
-````
-
-### Add content
-
-The <span style="color:#3EACAD">template</span> is created as a [Jupyter Book](https://jupyterbook.org/intro.html) - an open-source project to build beautiful, publication-quality books and documents from computational content. Let's see below how to add, execute and publish new content for your project.
-
-#### Updating the Jupyter Book `_config.yml` metadata
-
-To configure your Jupyter Book for your project, you’ll need to update the `_config.yml` file. This file controls various aspects of the Jupyter Book, including the project title, description, and relevant URLs. Below is a template to update this file to reflect the project’s details.
-
-```yaml
-# Book settings
-title: <your-project-title>
-author: <your-team>
-
-repository:
-url: https://github.com/<your-organization>/<your-project>
-
-# Jupyter Book options
-execute:
-  execute_notebooks: "auto"  #  Automatically execute notebooks during the build process
+git clone https://github.com/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation.git
+cd Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation
 ```
 
-#### Update table of contents
-
-When ready to publish the *documentation* on [GitHub Pages](https://pages.github.com/), all you need to do is edit the [table of contents](https://github.com/worldbank/template/blob/main/docs/_toc.yml) and add and/or update content you would like to display. [Jupyter Book](https://jupyterbook.org) supports content written as [Markdown](https://daringfireball.net/projects/markdown/), [Jupyter](https://jupyter.org) notebooks and [reStructuredText](https://docutils.sourceforge.io/rst.html) files and the `docs/_toc.yml` file controls the [table of contents](https://github.com/worldbank/template/blob/main/docs/_toc.yml) of your book.
-
-The <span style="color:#3EACAD">template</span> comes with the [table of contents](https://github.com/worldbank/template/blob/main/docs/_toc.yml) below as an example.
-
-```yaml
-
-format: jb-book
-root: README
-
-parts:
-
-  - caption: Examples
-    numbered: True
-    chapters:
-      - file: notebooks/world-bank-api.ipynb
-      - file: notebooks/world-bank-package.ipynb
-      - file: notebooks/nasa-apod.ipynb
-      - file: notebooks/bibliography.ipynb
+2. **Set Up Python Environment**:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-```{seealso}
-[Jupyter Book Structure and organize content](https://jupyterbook.org/en/stable/basics/organize.html)
+3. **Install Dependencies**:
+```bash
+pip install -r requirements.txt
 ```
 
-#### Add executable content
-
-[Jupyter Notebooks](https://jupyter.org) can be beautifully rendered and downloaded from your book. By default, the <span style="color:#3EACAD">template</span> will render any files listed on the [table of contents](#update-table-of-contents) that have a notebook structure. The <span style="color:#3EACAD">template</span> comes with a Jupyter notebook example, `notebooks/world-bank-api.ipynb`, to illustrate.
-
-```{important}
-
-By default, Jupyter notebooks are **not** executed. However, you can configure[Jupyter Book](https://jupyterbook.org) to run notebooks during the build process (on GitHub), allowing **code outputs** and **interactive visualizations** to be generated and included in the *documentation* automatically. When enabled, Jupyter notebooks are executed by [GitHub Actions](https://github.com/features/actions) each time a commit is made to the `main` branch. For this to work, it’s crucial to ensure that all necessary [dependencies](##use-pyproject-toml-for-python-package-management) are included in the repository. If you want to prevent a specific notebook from being executed, you can [exclude it from execution](https://jupyterbook.org/en/stable/content/execute.html#exclude-files-from-execution).
+4. **Configure Environment Variables**:
+```bash
+cp .env.example .env
+# Edit .env with your API keys
 ```
 
-```{seealso}
-[Jupyter Book Write executable content](https://jupyterbook.org/en/stable/content/executable/index.html)
+## Project Structure
+
+```
+.
+├── src/
+│   ├── jurisai/           # Main application package
+│   ├── template/          # Template utilities
+│   └── worldbank/         # World Bank specific modules
+├── deployment/            # Deployment configurations
+│   ├── config/           # Deployment config files
+│   ├── Dockerfile        # Docker image definition
+│   ├── docker-compose.yml # Docker Compose config
+│   ├── deploy.sh         # Deployment script
+│   └── README.md         # Deployment documentation
+├── docs/                 # Documentation files
+├── notebooks/            # Jupyter notebooks
+├── tests/               # Test suite
+├── config/              # Application configurations
+├── data/               # Data files (gitignored)
+├── secrets/            # Secret files (gitignored)
+├── .github/            # GitHub workflows and templates
+├── requirements.txt    # Python dependencies
+├── pyproject.toml     # Project metadata and tools config
+├── .pre-commit-config.yaml # Pre-commit hooks config
+├── .env.example       # Example environment variables
+├── LICENSE           # Mozilla Public License
+├── CONTRIBUTING.md   # Contribution guidelines
+├── CODE_OF_CONDUCT.md # Code of conduct
+├── CITATION.cff      # Citation information
+└── NOTICE           # Third-party notices
 ```
 
-#### Distributing Your Project as a Python Package
+The project follows a modular structure with clear separation of concerns:
+- `src/jurisai/`: Core application logic and components
+- `src/template/`: Reusable template utilities
+- `src/worldbank/`: World Bank specific implementations
+- `deployment/`: All deployment-related configurations and scripts
+- `docs/`: Project documentation and guides
+- `notebooks/`: Example notebooks and data analysis
+- `tests/`: Automated test suite
+- `config/`: Application configuration files
+- `data/`: Data storage (not tracked in git)
+- `secrets/`: Sensitive configuration (not tracked in git)
 
-If your project uses [Python](https://python.org), it’s highly recommended to distribute it as a [package](https://packaging.python.org/en/latest/tutorials/packaging-projects/). By including a `pyproject.toml` file, the packaging process becomes more streamlined - *trust me [things can get intense](https://imgs.xkcd.com/comics/python_environment.png)*.
+## Dependencies
 
-Additionally:
+### Core Components
+- **Frontend**:
+  - `streamlit`: Web interface
+  - `python-dotenv`: Environment management
 
-```{tip}
-- Using `pyproject.toml` future-proofs your setup by aligning with modern packaging standards.
-- The `pyproject.toml` file acts as a single source of truth for your Python dependencies and project metadata.
-- You can combine Conda for system-level dependencies with `pyproject.toml` for Python dependencies, using Conda for environments and pip/poetry for Python packages.
-- Any packages in the `src/` folder will be automatically discovered and installed.
+### AI and ML
+- `openai==1.66.2`: GPT model integration
+- `langchain==0.3.20`: LLM framework
+- `langchain-core==0.3.44`: Core functionality
+- `langchain-community==0.3.19`: Community components
+- `langchain-openai==0.3.8`: OpenAI integration
+- `pinecone==5.4.2`: Vector database
+- `groq==0.19.0`: Alternative LLM provider
+
+### Translation
+- `google-cloud-translate`: Primary translation
+- `deep-translator==1.11.4`: Backup translation
+
+### Data Processing
+- `pandas`: Data manipulation
+- `numpy`: Numerical operations
+- `nltk`: Text processing
+- `scikit-learn`: ML utilities
+- `spacy`: NLP processing
+- `tiktoken==0.9.0`: Token counting
+
+## Deployment
+
+### Quick Start
+```bash
+# Clone repository
+git clone https://github.com/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation.git
+cd Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation
+
+# Setup environment
+cp deployment/.env.example deployment/.env
+cd deployment
+docker-compose up --build -d
 ```
 
-##### Use `pyproject.toml` for Python Package Management
+### Resource Requirements
+- Memory: 2GB minimum
+- CPU: 1 core minimum
+- Storage: 1GB minimum
+- Ports: 8501 (Streamlit)
 
-While the <span style="color:#3EACAD">template</span> recommends using [Conda](https://conda.io/projects/conda/en/latest/index.html) (or [Mamba](https://github.com/mamba-org/mamba)) as the environment manager and managing dependencies through an `environment.yml` file, there is an alternative approach that leverages `pyproject.toml`. This can be particularly advantageous if your project is a Python package or if you want to simplify and standardize the management of Python-specific dependencies.
-
-##### Why use `pyproject.toml`?
-
-The next step is ensure your code is maintainable, reliable and reproducible by including
-any dependencies and requirements, such as packages, configurations, secrets (template) and additional instructions.
-
-1. **Standardization**: `pyproject.toml` is a modern, standardized format defined by [PEP 518](https://peps.python.org/pep-0518/) and [PEP 621](https://peps.python.org/pep-0621/) that centralizes project configuration in Python projects, including build requirements and dependencies.
-
-2. **Python Packaging**: If your project is to be distributed as a package, `pyproject.toml` is the preferred way to define build tools (like [hatch](https://hatch.pypa.io/latest/config/dependency/) or [poetry](https://python-poetry.org)) and metadata for your package (like name, version, dependencies, etc.). It allows tools like `pip` and `build` to install and package your project more effectively.
-
-3. **Compatibility with Tools**: The `pyproject.toml` file is compatible with multiple Python packaging and dependency management tools such as `poetry` and `pip`. This allows for smoother integration with CI/CD pipelines, PyPI, and other environments.
-
-4. **Separation of Concerns**: While Conda manages both system-level and Python-specific packages, using `pyproject.toml` helps isolate Python dependencies. This is useful if your project uses primarily Python packages and you want finer control over Python versioning and dependency resolution.
-
-#### Example: Using `pyproject.toml`
-
-This `pyproject.toml` file specifies the dependencies and other metadata for your Python package. You can install these packages using `pip`, ensuring that your Python environment is properly managed. You can still use Conda for system-level packages (such as `libc`, `gdal`, etc.), while using `pyproject.toml` for Python package management.
-
-1. **`pyproject.toml` Example**:
-
-    ```toml
-    [build-system]
-    requires = ["hatchling>=1.21.0", "hatch-vcs>=0.3.0"]
-    build-backend = "hatchling.build"
-
-    [project]
-    name = "template"
-    description = "A data science project"
-    readme = { file = "README.md", content-type = "text/markdown" }
-    license = { file = "LICENSE" }
-    authors = [
-      { name = "Your Name", email = "your.email@example.com" }
-    ]
-    dynamic = ["version"]
-
-    python = ">=3.9"
-    dependencies = [
-      "pandas>=1.4.3,<2",
-    ]
-    [project.optional-dependencies]
-    docs = [
-        "docutils==0.17.1",
-        "jupyter-book>=1,<2",
-    ]
-
-    [tool.hatch.build.targets.sdist]
-    include = [
-        "src/**/*"
-    ]
-
-    [tool.hatch.version]
-    source = "vcs"
-    ```
-
-2. **Keep the Conda Environment for System-level Packages**:
-    You can continue to use `environment.yml` to specify non-Python dependencies or packages not available on PyPI, such as `mamba` or `gdal`.
-
-    ```yaml
-    channels:
-      - conda-forge
-    dependencies:
-      - python=3.9
-      - mamba
-      - gdal
-    ```
-
-3. **Installation**:
-  To create an environment, you would first install the Conda dependencies and then use `pip` to install Python-specific dependencies from `pyproject.toml`. Alternatively, you can skip Conda and use `pip` for the entire setup.
-
-    ```shell
-    # Create Conda environment
-    conda env create -f environment.yml -n <your-environment-name>
-
-    # Activate the environment
-    conda activate <your-environment-name>
-
-    # Install Python dependencies
-    pip install .
-    ```
-
-  To install a Python package directly from a [GitHub](https://github.com) repository using [pip](https://pip.pypa.io/en/stable/installation/), you can use the command pip install `git+https://github.com/<username>/<repository>.git`. This allows you to install the latest version of the package from the repository. You can also specify a particular branch or release tag by adding `@<branch_or_tag>` at the end of the URL This is particularly useful when you want to access features or fixes that haven’t been published on PyPI yet, or to get the latest updates from the repository.
-
-  If you want to install the latest release, you should specify the tag associated with that release. For instance:
-
-  ```shell
-    pip install git+https://github.com/<username>/<repository>.git@<latest_release_tag>
-  ```
-
-```{seealso}
-- [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-- [Writing your pyproject.toml](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/)
-- [Conda Managing Environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+### Container Management
+```bash
+./deploy.sh build    # Build image
+./deploy.sh start    # Start container
+./deploy.sh stop     # Stop container
+./deploy.sh restart  # Restart container
+./deploy.sh status   # Check status
 ```
 
-#### Building Documentation Locally
+For detailed deployment instructions, see [deployment/README.md](deployment/README.md).
 
-To build the documentation locally, please follow these steps:
+## Contributing
 
-- Install the package with documentation dependencies:
-
-  ```shell
-    pip install -e .[docs]
-  ```
-  in some environments (e.g., on Mac OS), try this instead to scape the brackets:
-   ```shell
-    pip install -e .\[docs]\
-  ```
-
-- Build the documentation:
-
-  ```shell
-   jupyter-book build . --config docs/_config.yml --toc docs/_toc.yml
-  ```
-
-The generated documentation will be available in the `_build/html` directory. Open the `index.html` file in a web browser to view it.
-
-## Code of Conduct
-
-The <span style="color:#3EACAD">template</span> maintains a [Code of Conduct](docs/CODE_OF_CONDUCT.md) to ensure an inclusive and respectful environment for everyone. Please adhere to it in all interactions within our community.
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
-The <span style="color:#3EACAD">template</span> is licensed under the [**Mozilla Public License**](https://www.mozilla.org/en-US/MPL). Remember to replace the [license](LICENSE) if necessary. If open source, [choose an open source license](https://choosealicense.com).
+This project is licensed under the Mozilla Public License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- World Bank Group
+- Ghana Legal Information Institute (GhaLII)
+- Sierra Leone Legal Information Institute (SierraLII)
+- GWU Master's Students
+
+---
+
+**Note**: This project is maintained by GWU Master's Students for Global Legal Access. Country borders or names do not necessarily reflect the World Bank Group's official position.

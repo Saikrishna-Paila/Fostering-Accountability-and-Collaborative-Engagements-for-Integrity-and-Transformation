@@ -1,0 +1,25 @@
+JurisAI: Legal Assistant for Ghana and Sierra Leone
+Copyright (c) 2024 World Bank Group
+
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+If a copy of the MPL was not distributed with this file, You can obtain one at
+https://mozilla.org/MPL/2.0/.
+
+This product includes software developed by:
+- The World Bank Group (https://www.worldbank.org/)
+- Contributors to the JurisAI project
+
+This software uses the following open source packages:
+- OpenAI GPT models for legal analysis
+- Google Cloud Translation API for language translation
+- Pinecone for vector similarity search
+- FastAPI for backend services
+- Streamlit for frontend interface
+- LangChain for AI orchestration
+
+Legal Resources provided by:
+- Ghana Legal Information Institute (GhaLII)
+- Sierra Leone Legal Information Institute (SierraLII)
+
+The views expressed in this software do not necessarily represent those of the World Bank Group, 
+its Board of Executive Directors, or the governments they represent. 
