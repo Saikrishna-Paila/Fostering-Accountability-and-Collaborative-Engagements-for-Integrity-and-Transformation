@@ -171,3 +171,66 @@ This project is licensed under the Mozilla Public License - see the [LICENSE](LI
 ---
 
 **Note**: This project is maintained by GWU Master's Students for Global Legal Access. Country borders or names do not necessarily reflect the World Bank Group's official position.
+
+## Deployment
+
+### Docker Deployment
+
+The application can be deployed using Docker and Docker Compose. All deployment configurations are located in the `deployment` directory.
+
+```bash
+# Clone the repository
+git clone https://github.com/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation.git
+cd Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation
+
+# Setup environment variables
+cp deployment/.env.example deployment/.env
+# Edit deployment/.env with your API keys
+
+# Build and start the application
+cd deployment
+docker-compose up --build -d
+```
+
+### Resource Requirements
+
+- Memory: 2GB minimum
+- CPU: 1 core minimum
+- Storage: 1GB minimum
+- Ports: 8501 (Streamlit)
+
+### Deployment Structure
+
+```
+deployment/
+├── config/
+│   └── deployment.yaml    # Deployment configuration
+├── Dockerfile            # Docker image definition
+├── docker-compose.yml    # Docker Compose configuration
+├── deploy.sh            # Deployment script
+├── .env.example         # Environment variables template
+└── README.md           # Deployment documentation
+```
+
+### Health Checks
+
+The application includes built-in health checks:
+- Endpoint: `/_stcore/health`
+- Interval: 30 seconds
+- Timeout: 10 seconds
+- Retries: 3
+
+### Container Management
+
+Use the deployment script for common operations:
+
+```bash
+cd deployment
+./deploy.sh build    # Build the Docker image
+./deploy.sh start    # Start the container
+./deploy.sh stop     # Stop the container
+./deploy.sh restart  # Restart the container
+./deploy.sh status   # Check container status
+```
+
+For more detailed deployment instructions, see [deployment/README.md](deployment/README.md).
