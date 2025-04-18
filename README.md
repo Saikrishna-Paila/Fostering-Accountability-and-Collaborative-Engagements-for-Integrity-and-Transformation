@@ -3,6 +3,14 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Mozilla-blue.svg)](LICENSE)
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://jurisai.streamlit.app)
+[![OpenAI](https://img.shields.io/badge/OpenAI-API-green.svg)](https://openai.com/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Pinecone](https://img.shields.io/badge/Pinecone-Vector%20DB-blue)](https://www.pinecone.io/)
+[![LangChain](https://img.shields.io/badge/LangChain-0.3.20-orange)](https://python.langchain.com/)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation/graphs/commit-activity)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation)](https://github.com/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation/commits/main)
 
 ## Overview
 
@@ -11,16 +19,49 @@ JurisAI is an intelligent legal assistant that provides accessible legal guidanc
 ### Key Features
 
 - **Multilingual Support**:
-  - 🇬🇭 Ghana: English and Akan (Twi)
-  - 🇸🇱 Sierra Leone: English and Krio
+  - 🇬🇭 Ghana: English and Akan (Twi) translation
+  - 🇸🇱 Sierra Leone: English and Krio translation
+  - Real-time language switching
+  - Culturally appropriate translations
+
 - **AI-powered Legal Assistance**:
-  - Legal question answering
-  - Document analysis
-  - Context-aware responses
+  - Interactive legal question answering
+  - Context-aware responses using LangChain
+  - Legal document analysis and summarization
+  - Pinecone vector search for relevant legal documents
+
 - **User-friendly Interface**:
-  - Simple chat interface
-  - Easy language switching
+  - Clean and intuitive Streamlit chat interface
+  - Easy language toggle buttons
   - Mobile-responsive design
+  - Real-time response generation
+
+## Technical Architecture
+
+### Backend Components
+- **LangChain Integration**:
+  - Document processing and chunking
+  - Vector embeddings management
+  - Prompt templates and chains
+  - Context-aware response generation
+
+- **Vector Search**:
+  - Pinecone for document similarity search
+  - Efficient retrieval of relevant legal information
+  - Semantic search capabilities
+
+- **Translation Services**:
+  - Google Cloud Translation API integration
+  - Deep-translator for backup translations
+  - Custom translation dictionaries for legal terms
+
+### Frontend Components
+- **Streamlit UI**:
+  - Chat-based interface
+  - Language selection toggles
+  - Progress indicators
+  - Response formatting
+  - Error handling
 
 ## Getting Started
 
@@ -30,17 +71,18 @@ JurisAI is an intelligent legal assistant that provides accessible legal guidanc
    - Python 3.9 or higher
    - pip (Python package installer)
 
-2. **API Keys**:
-   - OpenAI API Key
-   - Pinecone API Key
+2. **Required API Keys**:
+   - OpenAI API Key (for GPT models)
+   - Pinecone API Key (for vector search)
    - Google Cloud Translation API Key
+   - Groq API Key (optional)
 
 ### Installation
 
 1. **Clone the Repository**:
 ```bash
-git clone https://github.com/worldbank/jurisai.git
-cd jurisai
+git clone https://github.com/Saikrishna-Paila/Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation.git
+cd Fostering-Accountability-and-Collaborative-Engagements-for-Integrity-and-Transformation
 ```
 
 2. **Set Up Python Environment**:
@@ -54,10 +96,15 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. **Configure Environment**:
+4. **Configure Environment Variables**:
 ```bash
 cp .env.example .env
-# Edit .env with your API keys
+# Edit .env with your API keys:
+# - OPENAI_API_KEY
+# - PINECONE_API_KEY
+# - PINECONE_ENVIRONMENT
+# - GOOGLE_CLOUD_API_KEY
+# - GROQ_API_KEY (optional)
 ```
 
 ## Project Structure
@@ -68,9 +115,11 @@ jurisai/
 │   └── jurisai/
 │       ├── __init__.py
 │       ├── app.py          # Streamlit application
-│       └── be_pipe.py      # Backend processing
+│       └── be_pipe.py      # Backend processing pipeline
 ├── docs/                   # Documentation
 ├── notebooks/             # Example notebooks
+│   ├── api-examples.ipynb
+│   └── translation-examples.ipynb
 ├── tests/                # Test files
 ├── config/               # Configuration files
 ├── data/                # Data files (gitignored)
@@ -79,15 +128,30 @@ jurisai/
 
 ## Core Dependencies
 
-- **Frontend**: Streamlit
+- **Frontend**:
+  - `streamlit`: Web interface
+  - `python-dotenv`: Environment management
+
 - **AI/ML**:
-  - OpenAI
-  - LangChain
-  - Pinecone
-  - Groq
+  - `openai==1.66.2`: GPT model integration
+  - `langchain==0.3.20`: LLM framework
+  - `langchain-core==0.3.44`: Core LangChain functionality
+  - `langchain-community==0.3.19`: Community components
+  - `langchain-openai==0.3.8`: OpenAI integration
+  - `pinecone==5.4.2`: Vector database
+  - `groq==0.19.0`: Alternative LLM provider
+
 - **Translation**:
-  - Google Cloud Translate
-  - deep-translator
+  - `google-cloud-translate`: Primary translation service
+  - `deep-translator==1.11.4`: Backup translation
+
+- **Data Processing**:
+  - `pandas`: Data manipulation
+  - `numpy`: Numerical operations
+  - `nltk`: Text processing
+  - `scikit-learn`: Machine learning utilities
+  - `spacy`: NLP processing
+  - `tiktoken==0.9.0`: Token counting
 
 ## Contributing
 
