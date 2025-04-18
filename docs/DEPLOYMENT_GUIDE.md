@@ -34,7 +34,7 @@ SIERRA_LEONE_PINECONE_API_KEY="your-sierra-leone-pinecone-key"
 
 1. **Clone and Setup Project**
 ```bash
-# Clone repository (if applicable)
+# Clone repository
 git clone <repository-url>
 cd World_Bank_Project
 
@@ -78,7 +78,7 @@ docker run -p 8501:8501 \
 gcloud auth login
 
 # Set project
-gcloud config set project world-bank-project-1745007891
+gcloud config set project <your-project-id>
 
 # Enable required APIs
 gcloud services enable \
@@ -94,12 +94,12 @@ gcloud services enable \
 gcloud billing accounts list
 
 # Link billing account
-gcloud billing projects link world-bank-project-1745007891 \
-  --billing-account=018766-70F0A9-F84948
+gcloud billing projects link <your-project-id> \
+  --billing-account=<your-billing-account>
 
 # Create budget alert
 gcloud billing budgets create \
-  --billing-account=018766-70F0A9-F84948 \
+  --billing-account=<your-billing-account> \
   --display-name="WorldBank App Budget" \
   --budget-amount=50USD \
   --threshold-rule=percent=0.5 \
@@ -117,17 +117,17 @@ gcloud auth configure-docker
 
 # Build AMD64 image for Cloud Run
 docker build --platform linux/amd64 \
-  -t gcr.io/world-bank-project-1745007891/worldbank-app .
+  -t gcr.io/<your-project-id>/worldbank-app .
 
 # Push to Google Container Registry
-docker push gcr.io/world-bank-project-1745007891/worldbank-app
+docker push gcr.io/<your-project-id>/worldbank-app
 ```
 
 2. **Deploy to Cloud Run**
 ```bash
 # Deploy with environment variables
 gcloud run deploy worldbank-app \
-  --image gcr.io/world-bank-project-1745007891/worldbank-app \
+  --image gcr.io/<your-project-id>/worldbank-app \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated \
@@ -159,7 +159,7 @@ gcloud run services describe worldbank-app \
 gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name=worldbank-app" --limit=10
 
 # View metrics
-# Visit: https://console.cloud.google.com/run/detail/us-central1/worldbank-app/metrics
+# Visit Cloud Run service metrics in Google Cloud Console
 ```
 
 3. **Update Service**
@@ -211,15 +211,15 @@ gcloud run services update worldbank-app \
 - **Cost Management**:
   ```bash
   # View current budget
-  gcloud billing budgets list --billing-account=018766-70F0A9-F84948
+  gcloud billing budgets list --billing-account=<your-billing-account>
   ```
 
 ## Important URLs
 
-1. **Service URL**: https://worldbank-app-i3v5y2afta-uc.a.run.app
-2. **Monitoring Dashboard**: https://console.cloud.google.com/run/detail/us-central1/worldbank-app/metrics
-3. **Logs**: https://console.cloud.google.com/logs/query?project=world-bank-project-1745007891
-4. **Billing**: https://console.cloud.google.com/billing/018766-70F0A9-F84948/budgets
+1. **Service URL**: Visit your deployed Cloud Run service URL
+2. **Monitoring Dashboard**: Access through Google Cloud Console
+3. **Logs**: Access through Google Cloud Console
+4. **Billing**: Access through Google Cloud Console
 
 ## Security Notes
 
@@ -228,6 +228,8 @@ gcloud run services update worldbank-app \
 3. Monitor usage and set up alerts
 4. Use secure methods for sharing credentials
 5. Keep Docker and dependencies updated
+6. Use environment variables for all sensitive information
+7. Implement proper access controls and IAM policies
 
 ## Maintenance Schedule
 
