@@ -4,21 +4,27 @@ root: README
 parts:
   - caption: User Guide
     chapters:
-      - file: installation.md
-      - file: api-credentials.md
-      - file: usage.md
+      - file: docs/installation.md
+      - file: docs/API_CREDENTIALS_GUIDE.md
+      - file: docs/usage.md
       
   - caption: API Documentation
     chapters:
-      - file: ../notebooks/api-examples.ipynb
-      - file: ../notebooks/translation-examples.ipynb
+      - file: notebooks/api-examples.ipynb
       
   - caption: Development
     chapters:
-      - file: contributing.md
-      - file: code-of-conduct.md
-      - file: citation.md
+      - file: docs/CONTRIBUTING.md
+      - file: docs/CODE_OF_CONDUCT.md
+      - file: docs/citation.md
+      - file: docs/git-workflows.md
+      - file: docs/folders-and-naming.md
+      - file: docs/notebooks-workflows.md
 
+  - caption: Deployment
+    chapters:
+      - file: docs/DEPLOYMENT_GUIDE.md
+      
   - caption: References
     chapters:
-      - file: bibliography.bib
+      - file: docs/bibliography.bib
