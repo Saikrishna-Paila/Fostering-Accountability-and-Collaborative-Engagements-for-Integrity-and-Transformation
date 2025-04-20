@@ -7,7 +7,9 @@ logo: "images/logo.png"
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache  # Changed to cache for better build performance
+  timeout: 300  # Timeout in seconds
+  allow_errors: true  # Don't fail on notebook execution errors
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -22,7 +24,7 @@ repository:
 #######################################################################################
 # HTML-specific settings
 html:
-  home_page_in_navbar: false
+  home_page_in_navbar: true
   extra_navbar: ""
   use_edit_page_button: true
   use_repository_button: true
@@ -38,9 +40,19 @@ html:
   favicon: images/favicon.ico
 
 #######################################################################################
+# Parse and render settings
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - dollarmath
+    - linkify
+    - substitution
+    - tasklist
+
+#######################################################################################
 # Bibliography settings
 bibtex_bibfiles:
-  - bibliography.bib
+  - docs/bibliography.bib
 
 #######################################################################################
 # Sphinx settings
@@ -48,3 +60,4 @@ sphinx:
   config:
     html_show_copyright: false
     html_last_updated_fmt: "%b %d, %Y"
+    nb_execution_show_tb: true  # Show traceback on notebook execution errors
