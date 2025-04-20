@@ -71,22 +71,32 @@ jobs:
           pip install -e ".[docs]"
           
       - name: Build documentation
+        id: build_docs
         run: |
           # Create _build directory if it doesn't exist
           mkdir -p _build
           # Build the documentation
           jupyter-book build . --config docs/_config.yml --toc docs/_toc.yml
+          # Verify build succeeded
+          if [ ! -d "_build/html" ]; then
+            echo "Documentation build failed - no _build/html directory"
+            exit 1
+          fi
         
       - name: List built files
+        if: success()
         run: |
-          ls -la _build/html || echo "No _build/html directory found"
+          echo "Contents of _build/html:"
+          ls -la _build/html
           
       - name: Upload documentation artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: documentation
           path: _build/html
           retention-days: 5
+          if-no-files-found: error # Fail if no files are found
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'

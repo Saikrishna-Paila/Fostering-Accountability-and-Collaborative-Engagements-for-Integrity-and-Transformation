@@ -30,15 +30,36 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      actions: read  # Needed for downloading artifacts
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: documentation
           path: _site
+        continue-on-error: true  # Don't fail if artifact not found
+
+      - name: Check artifact download
+        id: check_files
+        run: |
+          if [ -d "_site" ] && [ -n "$(ls -A _site)" ]; then
+            echo "Artifact downloaded successfully"
+          else
+            echo "No artifact found or empty directory, building documentation locally"
+            # Setup Python and build docs
+            python -m pip install --upgrade pip
+            pip install -e ".[docs]"
+            jupyter-book build . --config docs/_config.yml --toc docs/_toc.yml
+            # Move built files to _site
+            mkdir -p _site
+            cp -r _build/html/* _site/
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
