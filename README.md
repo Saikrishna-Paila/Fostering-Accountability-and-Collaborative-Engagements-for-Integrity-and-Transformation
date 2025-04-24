@@ -232,6 +232,19 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 This project is licensed under the Mozilla Public License - see the [LICENSE](LICENSE) file for details.
 
+## Project Team
+
+This project is a collaborative effort led by the World Bank and George Washington University (GWU) Master's students.
+
+**Team Lead – World Bank Group**  
+- **Tatsuya Iwasaki**
+
+**Team Members – GWU**  
+- **Saikrishna Paila**  
+- **Aneri Patel**  
+- **Phani Vishnu Addepalli**  
+- **Pranideep Meka**
+
 ## Acknowledgments
 
 - World Bank Group
