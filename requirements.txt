@@ -14,7 +14,7 @@ tiktoken==0.9.0
 # OpenAI & Embeddings
 openai==1.66.2
 langchain==0.3.20
-langchain-core==0.3.44
+langchain-core==0.3.55
 langchain-community==0.3.19
 langchain-openai==0.3.8
 
