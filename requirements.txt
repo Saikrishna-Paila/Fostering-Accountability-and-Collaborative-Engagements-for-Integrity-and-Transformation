@@ -22,7 +22,7 @@ langchain-openai==0.3.8
 pinecone==5.4.2
 
 # Groq SDK
-groq==0.19.0
+groq==0.24.0
 
 # Utility
 PyYAML
