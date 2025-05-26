@@ -16,7 +16,7 @@ openai==1.66.2
 langchain==0.3.20
 langchain-core==0.3.44
 langchain-community==0.3.19
-langchain-openai==0.3.8
+langchain-openai==0.3.18
 
 # Pinecone
 pinecone==5.4.2
